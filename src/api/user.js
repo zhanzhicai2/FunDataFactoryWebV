@@ -22,9 +22,9 @@ export function logout() {
     method: 'get'
   })
 }
-export function register(data){
+export function register(data) {
   return request({
-    url :'/user/register',
+    url: '/user/register',
     method: 'post',
     data
   })
@@ -41,6 +41,13 @@ export function getUserList(params) {
 export function updateUser(data) {
   return request({
     url: '/user/update',
+    method: 'post',
+    data
+  })
+}
+export function searchUser(data) {
+  return request({
+    url: '/user/search',
     method: 'post',
     data
   })

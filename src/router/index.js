@@ -93,22 +93,21 @@ export const constantRoutes = [
       {
         path: 'project',
         name: 'project',
-        component: () => import('@/views/tree/index'),
+        component: () => import('@/views/project/index'),
         meta: { title: '项目管理', icon: 'el-icon-folder' }
       },
-      // {
-      //   path: 'user',
-      //   name: 'user',
-      //   component: () => import('@/views/user/index'),
-      //   meta: { title: '用户管理', icon: 'el-icon-user' }
-      // }
+      {
+        path: 'project/:id',
+        name: 'projectDetail',
+        component: () => import('@/views/project/detail'),
+        // hidden:true,
+        meta: { title: '项目详情', icon: 'el-icon-folder' }
+      }
     ]
   },
-
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]
-
 const createRouter = () => new Router({
   // mode: 'history', // require service support
   scrollBehavior: () => ({ y: 0 }),
